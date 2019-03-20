@@ -20,15 +20,15 @@
             "Dynamo"
         };
 
-        public static float[][] ComparisonMatrix;
+        public static float[][] AlternativeComparionMatrix;
 
 
         static Storage()
         {
-            ComparisonMatrix = new float[Choices.Length][];
-            for (int i = 0; i < Choices.Length; i++)
+            AlternativeComparionMatrix = new float[Alternatives.Length][];
+            for (int i = 0; i < Alternatives.Length; i++)
             {
-                ComparisonMatrix[i] = new float[Alternatives.Length];
+                AlternativeComparionMatrix[i] = new float[Alternatives.Length];
             }
         }
     }

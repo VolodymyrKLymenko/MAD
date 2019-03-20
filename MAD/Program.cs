@@ -1,4 +1,5 @@
-﻿using MAD.Interface;
+﻿using MAD.Core;
+using MAD.Interface;
 
 namespace MAD
 {
@@ -8,6 +9,7 @@ namespace MAD
         {
             Start.SayHi();
             Start.InitializeAlternatives();
+            Print.PrintAlternativeComparionMatrix();
 
             Finish.FinishTask();
         }
