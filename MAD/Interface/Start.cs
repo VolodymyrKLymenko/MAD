@@ -28,12 +28,12 @@ namespace MAD.Interface
                         while (true)
                         {
                             Console.Write($"Compare {Storage.Alternatives[i]} vs {Storage.Alternatives[j]} ");
-                            var value = CommonInput.Input<float>(-1);
+                            var value = CommonInput.Input<double>(-1);
 
                             if (value < 0) continue;
 
-                            Storage.AlternativeComparionMatrix[i][j] = value;
-                            Storage.AlternativeComparionMatrix[j][i] = 1 / value;
+                            Storage.AlternativeComparionMatrix[i, j] = value;
+                            Storage.AlternativeComparionMatrix[j, i] = 1 / value;
                             Console.WriteLine();
                             var res2 = Storage.AlternativeComparionMatrix;
                             break;
@@ -41,7 +41,7 @@ namespace MAD.Interface
                     }
                     else
                     {
-                        Storage.AlternativeComparionMatrix[i][j] = 1;
+                        Storage.AlternativeComparionMatrix[i, j] = 1;
                     }
                 }
             }

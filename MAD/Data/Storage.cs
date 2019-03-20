@@ -11,6 +11,17 @@
             "Appsend players amount",
             "Bet koef"
         };
+        
+        // For Display
+        public static string[] AlternativeshortName = new string[] {
+            "MoneyDiff",
+            "MiddleAge",
+            "TotalWins",
+            "CoachExpe",
+            "FunsAmoun",
+            "AppsendPl",
+            "Bet  koef"
+        };
 
         public static string[] Choices = new string[]
         {
@@ -20,16 +31,12 @@
             "Dynamo"
         };
 
-        public static float[][] AlternativeComparionMatrix;
+        public static double[,] AlternativeComparionMatrix;
 
 
         static Storage()
         {
-            AlternativeComparionMatrix = new float[Alternatives.Length][];
-            for (int i = 0; i < Alternatives.Length; i++)
-            {
-                AlternativeComparionMatrix[i] = new float[Alternatives.Length];
-            }
+            AlternativeComparionMatrix = new double[Alternatives.Length, Alternatives.Length];
         }
     }
 }

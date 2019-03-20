@@ -1,4 +1,5 @@
 ﻿using MAD.Data;
+using MathNet.Numerics.LinearAlgebra;
 using System;
 
 namespace MAD.Core
@@ -7,14 +8,30 @@ namespace MAD.Core
     {
         public static void PrintAlternativeComparionMatrix()
         {
-            for (int i = 0; i < Storage.AlternativeComparionMatrix.Length; i++)
+            Console.Write("         ");
+            foreach (var item in Storage.AlternativeshortName)
             {
-                for (int j = 0; j < Storage.AlternativeComparionMatrix.Length; j++)
+                Console.Write($" {item}");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < Storage.AlternativeComparionMatrix.GetLength(0); i++)
+            {
+                Console.Write($"{Storage.AlternativeshortName[i]} ");
+                for (int j = 0; j < Storage.AlternativeComparionMatrix.GetLength(0); j++)
                 {
-                    Console.Write($"[{ Storage.AlternativeComparionMatrix[i][j]:00.0000}] ");
+                    Console.Write($"[{ Storage.AlternativeComparionMatrix[i, j]:00.0000}] ");
                 }
                 Console.WriteLine();
             }
+        }
+
+        public static void PrintVector(Vector<double> vector)
+        {
+            foreach (var item in vector)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
         }
     }
 }
