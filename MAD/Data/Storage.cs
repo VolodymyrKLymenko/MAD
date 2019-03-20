@@ -2,7 +2,7 @@
 {
     public static class Storage
     {
-        public static string[] Alternatives = new string[] {
+        public static string[] Kriteries = new string[] {
             "Money diff",
             "Middle Age diff",
             "Total Wins Percent diff",
@@ -13,7 +13,7 @@
         };
         
         // For Display
-        public static string[] AlternativeshortName = new string[] {
+        public static string[] KriteriesShortName = new string[] {
             "MoneyDiff",
             "MiddleAge",
             "TotalWins",
@@ -23,7 +23,7 @@
             "Bet  koef"
         };
 
-        public static string[] Choices = new string[]
+        public static string[] _Alternatives = new string[]
         {
             "Karpaty",
             "Dynamo",
@@ -31,12 +31,12 @@
             "Dynamo"
         };
 
-        public static double[,] AlternativeComparionMatrix;
+        public static double[,] KriteriesComparionMatrix;
 
 
         static Storage()
         {
-            AlternativeComparionMatrix = new double[Alternatives.Length, Alternatives.Length];
+            KriteriesComparionMatrix = new double[Kriteries.Length, Kriteries.Length];
         }
     }
 }

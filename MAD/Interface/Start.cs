@@ -14,39 +14,47 @@ namespace MAD.Interface
             Console.WriteLine("Who win?\n");
         }
 
-        public static void InitializeAlternatives()
+        public static void InitializeKriterie()
         {
             Console.WriteLine("\nCompare by pairs: ");
             Console.WriteLine("If compare A vs B then\n if mark for A is 5 then for B is 1/5\n");
 
-            for (int i = 0; i < Storage.Alternatives.Length; i++)
+            CompareMatrixValues(Storage.Kriteries, ref Storage.KriteriesComparionMatrix);
+        }
+
+        public static void InitializeCriteriesImportances()
+        {
+            Console.WriteLine("\nSet your priorities: ");
+            Console.WriteLine("If compare A vs B then\n if mark for A is 5 then for B is 1/5\n");
+        }
+
+        private static void CompareMatrixValues(string[] values, ref double[,] resMatrix)
+        {
+            for (int i = 0; i < values.Length; i++)
             {
-                for (int j = i; j < Storage.Alternatives.Length; j++)
+                for (int j = i; j < values.Length; j++)
                 {
                     if (i != j)
                     {
                         while (true)
                         {
-                            Console.Write($"Compare {Storage.Alternatives[i]} vs {Storage.Alternatives[j]} ");
+                            Console.Write($"Compare {values[i]} vs {values[j]} ");
                             var value = CommonInput.Input<double>(-1);
 
                             if (value < 0) continue;
 
-                            Storage.AlternativeComparionMatrix[i, j] = value;
-                            Storage.AlternativeComparionMatrix[j, i] = 1 / value;
+                            resMatrix[i, j] = value;
+                            resMatrix[j, i] = 1 / value;
                             Console.WriteLine();
-                            var res2 = Storage.AlternativeComparionMatrix;
                             break;
                         }
                     }
                     else
                     {
-                        Storage.AlternativeComparionMatrix[i, j] = 1;
+                        resMatrix[i, j] = 1;
                     }
                 }
             }
-
-            var res = Storage.AlternativeComparionMatrix;
         }
     }
 }

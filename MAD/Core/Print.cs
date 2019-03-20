@@ -9,17 +9,17 @@ namespace MAD.Core
         public static void PrintAlternativeComparionMatrix()
         {
             Console.Write("         ");
-            foreach (var item in Storage.AlternativeshortName)
+            foreach (var item in Storage.KriteriesShortName)
             {
                 Console.Write($" {item}");
             }
             Console.WriteLine();
-            for (int i = 0; i < Storage.AlternativeComparionMatrix.GetLength(0); i++)
+            for (int i = 0; i < Storage.KriteriesComparionMatrix.GetLength(0); i++)
             {
-                Console.Write($"{Storage.AlternativeshortName[i]} ");
-                for (int j = 0; j < Storage.AlternativeComparionMatrix.GetLength(0); j++)
+                Console.Write($"{Storage.KriteriesShortName[i]} ");
+                for (int j = 0; j < Storage.KriteriesComparionMatrix.GetLength(0); j++)
                 {
-                    Console.Write($"[{ Storage.AlternativeComparionMatrix[i, j]:00.0000}] ");
+                    Console.Write($"[{ Storage.KriteriesComparionMatrix[i, j]:00.0000}] ");
                 }
                 Console.WriteLine();
             }
@@ -29,7 +29,7 @@ namespace MAD.Core
         {
             foreach (var item in vector)
             {
-                Console.Write($"{item} ");
+                Console.Write($"{item:.####} ");
             }
             Console.WriteLine();
         }

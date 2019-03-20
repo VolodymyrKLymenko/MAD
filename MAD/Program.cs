@@ -9,12 +9,12 @@ namespace MAD
         static void Main(string[] args)
         {
             Start.SayHi();
-            Start.InitializeAlternatives();
+            Start.InitializeKriterie();
 
             
             Print.PrintAlternativeComparionMatrix();
 
-            var customVector = Calculation.CalculateCustomVectorOfMatrix(Storage.AlternativeComparionMatrix);
+            var customVector = Calculation.CalculateCustomVectorOfMatrix(Storage.KriteriesComparionMatrix);
             System.Console.WriteLine("Custom vector: ");
             Print.PrintVector(customVector);
 
