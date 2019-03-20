@@ -1,4 +1,4 @@
-﻿using System;
+﻿using MAD.Interface;
 
 namespace MAD
 {
@@ -6,7 +6,10 @@ namespace MAD
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Start.SayHi();
+            Start.InitializeAlternatives();
+
+            Finish.FinishTask();
         }
     }
 }
