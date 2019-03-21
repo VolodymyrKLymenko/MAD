@@ -25,13 +25,34 @@ namespace MAD.Core
             }
         }
 
-        public static void PrintVector(Vector<double> vector)
+        public static void PrintKriteriesComparisonMatrix(double[,] alternativesMatrix, string mesage = "")
         {
-            foreach (var item in vector)
+            Console.WriteLine($"Compare by {mesage}");
+            Console.Write("         ");
+            foreach (var item in Storage.AlternativeshortNames)
             {
-                Console.Write($"{item:.####} ");
+                Console.Write($" {item}");
             }
             Console.WriteLine();
+            for (int i = 0; i < alternativesMatrix.GetLength(0); i++)
+            {
+                Console.Write($"{Storage.AlternativeshortNames[i]} ");
+                for (int j = 0; j < alternativesMatrix.GetLength(0); j++)
+                {
+                    Console.Write($"[{ alternativesMatrix[i, j]:00.0000}] ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintVector(Vector<double> vector)
+        {
+            Console.WriteLine("[");
+            foreach (var item in vector)
+            {
+                Console.WriteLine($"{item:.####} ");
+            }
+            Console.WriteLine("]\n");
         }
     }
 }

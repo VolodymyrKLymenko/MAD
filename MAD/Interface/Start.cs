@@ -26,6 +26,34 @@ namespace MAD.Interface
         {
             Console.WriteLine("\nSet your priorities: ");
             Console.WriteLine("If compare A vs B then\n if mark for A is 5 then for B is 1/5\n");
+
+            Console.WriteLine("Compare by MONEY:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByMoney);
+            Console.WriteLine();
+
+            Console.WriteLine("Compare by AGE:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByAge);
+            Console.WriteLine();
+
+            Console.WriteLine("Compare by APPEND PLAYER:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByAppsend);
+            Console.WriteLine();
+
+            Console.WriteLine("Compare by BET KOEF:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByBetKoef);
+            Console.WriteLine();
+
+            Console.WriteLine("Compare by EXPERIANCE:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByExperiance);
+            Console.WriteLine();
+
+            Console.WriteLine("Compare by FUNS SUPPORT:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByFuns);
+            Console.WriteLine();
+
+            Console.WriteLine("Compare by TOTAL WINS:");
+            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByTotalWins);
+            Console.WriteLine();
         }
 
         private static void CompareMatrixValues(string[] values, ref double[,] resMatrix)
