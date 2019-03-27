@@ -1,4 +1,8 @@
-﻿namespace MAD.Data
+﻿
+using MathNet.Numerics.LinearAlgebra;
+using MathNet.Numerics.LinearAlgebra.Double;
+
+namespace MAD.Data
 {
     public static class Storage
     {
@@ -28,7 +32,7 @@
             "Karpaty",
             "Dynamo",
             "Liverpool",
-            "Dynamo"
+            "Real"
         };
 
         // For Display
@@ -40,28 +44,76 @@
             "Real     "
         };
 
+        public static Vector<double> CustomVector = DenseVector.Create(Kriteries.Length, 0);
+        public static Vector<double> EstimatedAlternatives = DenseVector.Create(Alternatives.Length, 0);
 
-        public static double[,] KriteriesComparionMatrix;
+        public static double[,] KriteriesComparionMatrix =
+        {
+            { 5, 0.34, 7, 0.54, 10, 7, 1 },
+            { 4, 8, 7, 0.54, 10, 7, 2 },
+            { 5, 0.34, 7, 0.54, 10, 1.7, 2 },
+            { 5, 0.34, 0.7, 0.54, 10, 7, 2 },
+            { 15, 0.34, 7, 0.54, 10, 7, 3.2 },
+            { 5, 0.34, 7, 0.54, 3, 7, 2 },
+            { 5, 0.34, 7, 0.54, 10, 7, 2 }
+        };
 
-        public static double[,] CompareAlternativeByMoney;
-        public static double[,] CompareAlternativeByAge;
-        public static double[,] CompareAlternativeByTotalWins;
-        public static double[,] CompareAlternativeByExperiance;
-        public static double[,] CompareAlternativeByFuns;
-        public static double[,] CompareAlternativeByAppsend;
-        public static double[,] CompareAlternativeByBetKoef;
+        public static double[,] CompareAlternativeByMoney =
+        {
+            { 5, 3, 4, 0.7 },
+            { 0.5, 7, 14, 0.3 },
+            { 5.1, 7, 4, 0.3 },
+            { 5, 7.2, 4.8, 0.3 }
+        };
+        public static double[,] CompareAlternativeByAge =
+        {
+            { 5, 7, 8, 0.1 },
+            { 2, 9, 4, 0.3 },
+            { 5, 7, 14, 0.8 },
+            { 3, 0.7, 4, 0.3 }
+        };
+        public static double[,] CompareAlternativeByTotalWins =
+        {
+            { 5, 7, 4.8, 0.3 },
+            { 15, 7, 4, 0.3 },
+            { 5, 7, 4.2, 0.3 },
+            { 2.5, 7, 4, 0.3 }
+        };
+        public static double[,] CompareAlternativeByExperiance =
+        {
+            { 5, 7, 4, 0.3 },
+            { 5, 7, 4, 0.3 },
+            { 5, 7, 4, 0.3 },
+            { 5, 7, 4, 0.3 }
+        };
+        public static double[,] CompareAlternativeByFuns =
+        {
+            { 5, 9.7, 4, 0.3 },
+            { 7, 7, 8, 0.3 },
+            { 5, 9.17, 2, 0.3 },
+            { 1, 7, 3, 0.3 }
+        };
+        public static double[,] CompareAlternativeByAppsend =
+        {
+            { 5, 1.7, 4, 1.3 },
+            { 4, 7, 14, 0.3 },
+            { 5, 9.7, 4, 9.3 },
+            { 9, 7, 4, 0.3 }
+        };
+        public static double[,] CompareAlternativeByBetKoef =
+        {
+            { 4, 7, 4, 3.3 },
+            { 5, 8, 4, 0.3 },
+            { 3, 7, 4, 1.3 },
+            { 5, 0.7, 4, 0.3 }
+        };
+
+        public static double[,] CompareAlternativesKriteries;
 
 
         static Storage()
         {
-            KriteriesComparionMatrix = new double[Kriteries.Length, Kriteries.Length];
-            CompareAlternativeByMoney = new double[Alternatives.Length, Alternatives.Length];
-            CompareAlternativeByAge = new double[Alternatives.Length, Alternatives.Length];
-            CompareAlternativeByTotalWins = new double[Alternatives.Length, Alternatives.Length];
-            CompareAlternativeByExperiance = new double[Alternatives.Length, Alternatives.Length];
-            CompareAlternativeByFuns = new double[Alternatives.Length, Alternatives.Length];
-            CompareAlternativeByAppsend = new double[Alternatives.Length, Alternatives.Length];
-            CompareAlternativeByBetKoef = new double[Alternatives.Length, Alternatives.Length];
+            CompareAlternativesKriteries = new double[Alternatives.Length, Kriteries.Length];
         }
     }
 }

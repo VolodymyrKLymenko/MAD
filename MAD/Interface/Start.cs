@@ -56,6 +56,19 @@ namespace MAD.Interface
             Console.WriteLine();
         }
 
+        public static bool ChooseWay(string msg = "")
+        {
+            Console.WriteLine(msg);
+            Console.WriteLine("y - for YES");
+            Console.WriteLine("n - for NO");
+            Console.WriteLine("other - for NO");
+
+            var answer = Console.ReadLine();
+            return answer == "y" || answer == "Y"
+                ? true
+                : false;
+        }
+
         private static void CompareMatrixValues(string[] values, ref double[,] resMatrix)
         {
             for (int i = 0; i < values.Length; i++)

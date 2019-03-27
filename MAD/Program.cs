@@ -9,16 +9,20 @@ namespace MAD
         static void Main(string[] args)
         {
             Start.SayHi();
-            Start.InitializeKriterie();
-
-            
+            var choseCustomWay = Start.ChooseWay("Initialize custom (y/n):");
+            if (choseCustomWay)
+            {
+                Start.InitializeKriterie();
+            }
             Print.PrintAlternativeComparionMatrix();
 
-            var customVector = Calculation.CalculateCustomVectorOfMatrix(Storage.KriteriesComparionMatrix);
-            System.Console.WriteLine("Custom vector: ");
-            Print.PrintVector(customVector);
+            Storage.CustomVector = Calculation.CalculateCustomVectorOfMatrix(Storage.KriteriesComparionMatrix);
+            Print.PrintVector(Storage.CustomVector, "Custom vector: ");
 
-            Start.InitializeCriteriesImportances();
+            if (choseCustomWay)
+            {
+                Start.InitializeCriteriesImportances();
+            }
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByAge, "Age");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByAppsend, "Appsend player");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByBetKoef, "Bet koef");
@@ -26,6 +30,14 @@ namespace MAD
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByMoney, "Money");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByFuns, "Funs Support");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByTotalWins, "Total win");
+
+            Calculation.CalculateComparionMatrix();
+            Print.PrintKriteriesAlternativesComparisonMatrix(
+                "По каждому критерию рассчитывается собственный вектор и отношение согласованности." +
+                "\nПолученные собственные векторы записаны в столбцах:\n");
+
+            Calculation.CalculateEstimationVector();
+            Print.PrintEstimatedValues();
 
             Finish.FinishTask();
         }

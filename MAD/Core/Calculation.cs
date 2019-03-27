@@ -1,4 +1,5 @@
-﻿using MathNet.Numerics.LinearAlgebra;
+﻿using MAD.Data;
+using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Double;
 using System;
 
@@ -8,6 +9,12 @@ namespace MAD.Core
     {
         public const double PRECISION = 0.001;
         public const int MAX_ITERATIONS = 10000000;
+
+        public static void CalculateEstimationVector()
+        {
+            Matrix<double> customMatrix = Matrix.Build.DenseOfArray(Storage.CompareAlternativesKriteries);
+            Storage.EstimatedAlternatives = customMatrix * Storage.CustomVector;
+        }
 
         public static Vector<double> CalculateCustomVectorOfMatrix(double[,] matrix)
         {
@@ -31,6 +38,34 @@ namespace MAD.Core
             var eigenvalue = curEigenvalue;
 
             return x;
+        }
+
+        public static void CalculateComparionMatrix()
+        {
+            var eigenByAge = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByAge);
+            var eigenByApsend = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByAppsend);
+            var eigenByBetKoef = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByBetKoef);
+            var eigenByExperience = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByExperiance);
+            var eigenByFuns = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByFuns);
+            var eigenByMoney = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByMoney);
+            var eigenByTotalWins = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByTotalWins);
+
+            SetComparisonColumn(0, eigenByAge);
+            SetComparisonColumn(1, eigenByApsend);
+            SetComparisonColumn(2, eigenByBetKoef);
+            SetComparisonColumn(3, eigenByExperience);
+            SetComparisonColumn(4, eigenByFuns);
+            SetComparisonColumn(5, eigenByMoney);
+            SetComparisonColumn(6, eigenByTotalWins);
+
+        }
+
+        private static void SetComparisonColumn(int indexColumn, Vector<double> data)
+        {
+            for (int i = 0; i < data.Count; i++)
+            {
+                Storage.CompareAlternativesKriteries[i, indexColumn] = data[i];
+            }
         }
     }
 }
