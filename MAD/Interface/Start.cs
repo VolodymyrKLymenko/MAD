@@ -64,9 +64,7 @@ namespace MAD.Interface
             Console.WriteLine("other - for NO");
 
             var answer = Console.ReadLine();
-            return answer == "y" || answer == "Y"
-                ? true
-                : false;
+            return answer == "y" || answer == "Y";
         }
 
         private static void CompareMatrixValues(string[] values, ref double[,] resMatrix)
