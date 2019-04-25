@@ -44,7 +44,6 @@ namespace MAD.Core
         {
             var eigenByAge = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByAge);
             var eigenByApsend = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByAppsend);
-            var eigenByBetKoef = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByBetKoef);
             var eigenByExperience = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByExperiance);
             var eigenByFuns = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByFuns);
             var eigenByMoney = CalculateCustomVectorOfMatrix(Storage.CompareAlternativeByMoney);
@@ -52,11 +51,10 @@ namespace MAD.Core
 
             SetComparisonColumn(0, eigenByAge);
             SetComparisonColumn(1, eigenByApsend);
-            SetComparisonColumn(2, eigenByBetKoef);
-            SetComparisonColumn(3, eigenByExperience);
-            SetComparisonColumn(4, eigenByFuns);
-            SetComparisonColumn(5, eigenByMoney);
-            SetComparisonColumn(6, eigenByTotalWins);
+            SetComparisonColumn(2, eigenByExperience);
+            SetComparisonColumn(3, eigenByFuns);
+            SetComparisonColumn(4, eigenByMoney);
+            SetComparisonColumn(5, eigenByTotalWins);
 
         }
 

@@ -39,10 +39,6 @@ namespace MAD.Interface
             CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByAppsend);
             Console.WriteLine();
 
-            Console.WriteLine("Compare by BET KOEF:");
-            CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByBetKoef);
-            Console.WriteLine();
-
             Console.WriteLine("Compare by EXPERIANCE:");
             CompareMatrixValues(Storage.Alternatives, ref Storage.CompareAlternativeByExperiance);
             Console.WriteLine();

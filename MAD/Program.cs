@@ -25,17 +25,12 @@ namespace MAD
             }
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByAge, "Age");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByAppsend, "Appsend player");
-            Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByBetKoef, "Bet koef");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByExperiance, "Experiance");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByMoney, "Money");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByFuns, "Funs Support");
             Print.PrintKriteriesComparisonMatrix(Storage.CompareAlternativeByTotalWins, "Total win");
 
             Calculation.CalculateComparionMatrix();
-            Print.PrintKriteriesAlternativesComparisonMatrix(
-                "По каждому критерию рассчитывается собственный вектор и отношение согласованности." +
-                "\nПолученные собственные векторы записаны в столбцах:\n");
-
             Calculation.CalculateEstimationVector();
             Print.PrintEstimatedValues();
 

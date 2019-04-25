@@ -12,7 +12,7 @@ namespace MAD.Core
 
             for (int i = 0; i < Storage.AlternativeshortNames.Length; i++)
             {
-                Console.WriteLine($"{Storage.Alternatives[i]}: {Storage.EstimatedAlternatives[i]:0.####}");
+                Console.WriteLine($" {Storage.Alternatives[i]}: {Storage.EstimatedAlternatives[i]} ");
             }
 
             Console.WriteLine();
@@ -31,7 +31,7 @@ namespace MAD.Core
                 Console.Write($"{Storage.KriteriesShortName[i]} ");
                 for (int j = 0; j < Storage.KriteriesComparionMatrix.GetLength(0); j++)
                 {
-                    Console.Write($"[{ Storage.KriteriesComparionMatrix[i, j]:00.0000}] ");
+                    Console.Write($" [{ Storage.KriteriesComparionMatrix[i, j]:0.000}]  ");
                 }
                 Console.WriteLine();
             }
@@ -51,7 +51,7 @@ namespace MAD.Core
                 Console.Write($"{Storage.AlternativeshortNames[i]} ");
                 for (int j = 0; j < alternativesMatrix.GetLength(1); j++)
                 {
-                    Console.Write($"[{ alternativesMatrix[i, j]:00.0000}] ");
+                    Console.Write($" [{ alternativesMatrix[i, j]:0.000}]  ");
                 }
                 Console.WriteLine();
             }
@@ -74,7 +74,7 @@ namespace MAD.Core
                 Console.Write($"{Storage.KriteriesShortName[i]} ");
                 for (int j = 0; j < Storage.CompareAlternativesKriteries.GetLength(1); j++)
                 {
-                    Console.Write($"[{ Storage.CompareAlternativesKriteries[i, j]:00.0000}] ");
+                    Console.Write($" [{ Storage.CompareAlternativesKriteries[i, j]:0.000}]  ");
                 }
                 Console.WriteLine();
             }
@@ -86,7 +86,7 @@ namespace MAD.Core
             Console.Write("\n[");
             foreach (var item in vector)
             {
-                Console.Write($"{item:##.####}, ");
+                Console.Write($"{item:0.000}, ");
             }
             Console.WriteLine("]\n");
         }

@@ -7,41 +7,39 @@ namespace MAD.Data
     public static class Storage
     {
         public static string[] Kriteries = new string[] {
-            "Money diff",
             "Middle Age diff",
+            "Money diff",
             "Total Wins Percent diff",
             "Coach Experiance",
             "Funs amount diff",
-            "Appsend players amount",
-            "Bet koef"
+            "Appsend players amount"
         };
         
         // For Display
         public static string[] KriteriesShortName = new string[] {
-            "MoneyDiff",
             "MiddleAge",
+            "MoneyDiff",
             "TotalWins",
             "CoachExpe",
             "FunsAmoun",
-            "AppsendPl",
-            "Bet  koef"
+            "AppsendPl"
         };
 
         public static string[] Alternatives = new string[]
         {
-            "Liverpool",
-            "Ajax",
             "Barcelona",
-            "Totenham"
+            "Totenham",
+            "Ajax",
+            "Liverpool"
         };
 
         // For Display
         public static string[] AlternativeshortNames = new string[]
         {
-            "Livarpool",
-            "Ajax     ",
             "Barcelona",
-            "Totenham "
+            "Totenham ",
+            "Ajax     ",
+            "Livarpool"
         };
 
         public static Vector<double> CustomVector = DenseVector.Create(Kriteries.Length, 0);
@@ -50,63 +48,55 @@ namespace MAD.Data
         // in range [1 - 9]
         public static double[,] KriteriesComparionMatrix =
         {
-            { 1,      (1/8),       2, (1/2), (1/9),  (1/7),  (1/3)    },
-            { 8,          1,       5,     6,     3,      2,      9    },
-            { (1/2),  (1/5),       1,     5,     8,      5,   (1/2)   },
-            { 2,      (1/6),   (1/5),     1, (1/4),  (1/2),   (1/7)   },
-            { 9,      (1/3),   (1/8),     4,     1,      2,      1,   },
-            { 7,      (1/2),   (1/5),     2, (1/2),      1,   (1/3),  },
-            { 3,      (1/9),       2,     7,     1,      3,      1,   }
+            { (double)1,      ((double)1/8),       (double)2, ((double)1/2), ((double)1/9),  ((double)1/7)  },
+            {(double) 8,          (double)1,       (double)5,     (double)6,     (double)3,      (double)2  },
+            { ((double)1/2),  ((double)1/5),       (double)1,     (double)5,     (double)8,      (double)5  },
+            { (double)2,      ((double)1/6),   ((double)1/5),     (double)1, ((double)1/4),  ((double)1/2)  },
+            { (double)9,      ((double)1/3),   ((double)1/8),     (double)4,     (double)1,      (double)2  },
+            { (double)7,      ((double)1/2),   ((double)1/5),     (double)2, ((double)1/2),      (double)1  }
         };
 
         public static double[,] CompareAlternativeByMoney =
         {
-            { 1,         3,        2,    (1/5) },
-            { (1/3),     1,        1,      2   },
-            { (1/2), (1/4),        1,   (1/5)  },
-            { 5,         1,        5,     1    }
+            { (double)1,         (double)3,        (double)2,    ((double)1/5) },
+            { ((double)1/3),     (double)1,        (double)1,      (double)2   },
+            { ((double)1/2), ((double)1/4),        (double)1,   ((double)1/5)  },
+            { (double)5,         (double)1,        (double)5,     (double)1    }
         };
         public static double[,] CompareAlternativeByAge =
         {
-            { 1,         4,    (1/2),    (1/3) },
-            { (1/4),     1,        1,      2   },
-            { 2,     (1/4),        1,      4   },
-            { 3,         1,    (1/4),      1   }
+            { (double)1,         (double)4,    ((double)1/2),    ((double)1/3) },
+            { ((double)1/4),     (double)1,        (double)1,      (double)2   },
+            { (double)2,     ((double)1/4),        (double)1,      (double)4   },
+            { (double)3,         (double)1,    ((double)1/4),      (double)1   }
         };
         public static double[,] CompareAlternativeByTotalWins =
         {
-            { 1,     (1/2),        2,    (1/4) },
-            { 2,         1,        1,      2   },
-            { (1/2), (1/4),        1,      8   },
-            { 4,         1,    (1/8),      1   }
+            { (double)1,     ((double)1/2),        (double)2,    ((double)1/4) },
+            { (double)2,         (double)1,        (double)1,      (double)2   },
+            { ((double)1/2), ((double)1/4),        (double)1,      (double)8   },
+            { (double)4,         (double)1,    ((double)1/8),      (double)1   }
         };
         public static double[,] CompareAlternativeByExperiance =
         {
-            { 1,     (1/2),        2,      1   },
-            { 2,         1,        1,      2   },
-            { (1/2), (1/4),        1,    (1/9) },
-            { 1,         1,        9,      1   }
+            { (double)1,     ((double)1/2),        (double)2,      (double)1   },
+            { (double)2,         (double)1,        (double)1,      (double)2   },
+            { ((double)1/2), ((double)1/4),        (double)1,    ((double)1/9) },
+            { (double)1,     ((double)1/2),        (double)9,      (double)1   }
         };
         public static double[,] CompareAlternativeByFuns =
         {
-            { 5, 9.7, 4, 0.3 },
-            { 7, 7, 8, 0.3 },
-            { 5, 9.17, 2, 0.3 },
-            { 1, 7, 3, 0.3 }
+            { (double)1,       ((double)5),      ((double)3),      (double)1   },
+            { ((double)1/5),     (double)1,    ((double)1/2),  ((double)1/2)   },
+            { ((double)1/3),     (double)2,        (double)1,    ((double)1/3) },
+            { (double)1,         (double)2,        (double)3,      (double)1   }
         };
         public static double[,] CompareAlternativeByAppsend =
         {
-            { 5, 1.7, 4, 1.3 },
-            { 4, 7, 14, 0.3 },
-            { 5, 9.7, 4, 9.3 },
-            { 9, 7, 4, 0.3 }
-        };
-        public static double[,] CompareAlternativeByBetKoef =
-        {
-            { 4, 7, 4, 3.3 },
-            { 5, 8, 4, 0.3 },
-            { 3, 7, 4, 1.3 },
-            { 5, 0.7, 4, 0.3 }
+            { (double)1,       ((double)2),      ((double)1),      (double)1   },
+            { ((double)1/2),     (double)1,    ((double)1/2),  ((double)1/2)   },
+            { ((double)1),       (double)2,        (double)1,    ((double)1/3) },
+            { (double)1,         (double)2,        (double)3,      (double)1   }
         };
 
         public static double[,] CompareAlternativesKriteries;
